@@ -1,7 +1,7 @@
-// Define 'health' of virtualpet
+// Define base 'health' of pet
 let health = 10
 
-// Define rate at which 'health' decreases
+// Define rate at which 'health' decreases (in milliseconds)
 basic.forever(function () {
     if (health > 0) {
         basic.pause(10000)
@@ -9,7 +9,7 @@ basic.forever(function () {
     }
 })
 
-// Define virtualpet's reactions to 'health' level
+// Define 'health' levels
 basic.forever(function () {
     if (health > 5) {
         basic.showIcon(IconNames.Happy)
@@ -29,7 +29,7 @@ basic.forever(function () {
     }
 })
 
-// Define inputs and effect on 'health'
+// Define inputs for giving 'attention' to pet
 input.onButtonPressed(Button.A, function () {
     if (health < 10) {
         health += 1
